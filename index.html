@@ -3,75 +3,131 @@
       ID: 623040130-1 -->
 <!DOCTYPE html>
 <html>
-
       
       <head>
       
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
             <title>Kittisak's example page</title>
       <style>
+            
             html {
                   background-color:rgba(255, 99, 71, 0.5);
                   
             }
+           
             body {
-                     width: 600px;
-                     margin: 0 auto;
+                     width: 40%;
+                     margin: auto;
                      background-color: MediumSeaGreen;
-                     padding: 0 20px 20px 20px;
+                     padding: 10px;
                      border: 5px solid black; 
 }
             img {
                   display: block;
                   margin: 0 auto;
+                  width: 50%;
+                  height: 70%;
             }
             h1 {
                   color: #ff6347;
                   font-family: verdana;
-                  font-size: 400%;
+                  font-size: 60px;
                   text-align: center;
                   text-shadow: 2px 2px black;
                   
 }
-            p ,ul{
-                  color: white;
-                  font-family: verdana;
-                  
-            } #myHeader {
+            #myHeader {
                   color:red;
-                  font-size: 18px;
                   padding: 10px;
-
-                  
+                  font-size: 18px;       
 }
-
+            #pic {
+                  width: 60%;
+                  height: 70%;
+}
             .popular {
                   border: 4px dashed black;
                   border-color:red;
                   border-radius: 4px;
                   padding: 5px;
+                  font-size: 16px;
+                  color: white;
+                  font-family: verdana;
             
+            }.text1{
+                   text-align: center;
+                   font-size: 15px;
+                   color: white;
+                  font-family: verdana;
+            }.text2{
+                  font-size: 16px;
+                  color: white;
+                  font-family: verdana;
             }
-          
+
+@media only screen and (max-width: 320px) {
+      img{
+            width: 60%;
+            height: 80%;
+      }
+      body{
+            width: 70%;
+      }
+      h1{
+            font-size: 30px;
+      }#pic {
+                  width: 85%;
+                  height: 55%;
+}     .text1{
+                  font-size: 10px;
+
+}     .text2{
+      font-size: 10px;
+
+}     #myHeader{
+      font-size: 13px;
+}     .popular{
+      font-size: 10px;
+      border: 3px dashed red;
+}
+}
+@media  only screen and (max-width: 600px) and (orientation: landscape){
+      body{
+            width: 80%;
+      }
+      h1{
+            font-size: 50px;
+}}
+
+@media only screen and (min-width: 700px)and (max-width: 1000px){
+      body{
+            width: 60%;
+      }
+}
+
+
+
+
+
+
       </style>
       </head>
       <body>
             <h1> Khon Kaen <br>University</h1>
-            <img src="images/img.jpg " title="KKU" width="50%" height="70%" alt="My image">
-            <figure>
-                  <img src="images/enkku.jpg" width="60%" height="70%" alt="Faculty of Engineering">
-                  <figcaption style = text-align:center>Faculty of Engineering</figcaption>
+            <img src="images/img.jpg " title="KKU" alt="My image">
+            <figure class="text">
+                  <img src="images/enkku.jpg"  alt="Faculty of Engineering" id="pic">
+                 <figcaption class="text1">Computer Engineering</figcaption>
             </figure>
             
             <p id="myHeader">Khon Kaen University has many outstanding places</p>
             <ul >
                   <li class="popular">ศาลเจ้าพ่อมอดินแดง</li>
-                  <li>พิพิธภัณฑ์ธรรมชาติวิทยา มข</li>
+                  <li class="text2">พิพิธภัณฑ์ธรรมชาติวิทยา มข</li>
                   <li class="popular">อุโมงค์ต้นไม้</li>
             </ul>
-            <p >Have you  been in these places?If not,please do so.For more information,please click 
-            <a href="https://www.kku.ac.th/" target="blank",>Khon Kaen University</a></p>
+            <p class="text2">Have you  been in these places?If not,please do so.For more information,please click 
+            <a href="https://www.kku.ac.th/" target="blank", class="text2">Khon Kaen University</a></p>
 
       </body>
 </html>
