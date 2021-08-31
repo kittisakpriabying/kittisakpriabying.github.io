@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <head>
+    <script>
+      var ar = new Array();
+
+      outer: for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          var num = prompt("Enter a positive integer");
+          if (checkNum(num)) break outer;
+        }
+      }
+      showPrimes(num);
+      alert("For n = " + num + " prime numbers are " + ar);
+
+      function showPrimes(n) {
+        for (let i = 2; i < n; i++) {
+          if (isPrime(i)) {
+            ar.push(i);
+          }
+        }
+        return ar;
+      }
+
+      function isPrime(n) {
+        for (let i = 2; i < n; i++) {
+          if (n % i == 0) return false;
+        }
+        return true;
+      }
+
+      function checkNum(num) {
+        if (num % 1 == 0 && num > 0) return true;
+      }
+    </script>
+  </head>
+ 
+  <body>
+    <h1>Prime numbers Finder!</h1>
+    <p class="textHead">
+      Write the web app (problem1.html and lib/problem1.js) to prompt accepting
+      for a positive integer number
+    </p>
+    <ul>
+      <li class="textParag">
+        If the entered text is not a positive integer number (such as
+        non-numeric inputs (a, b, c…), a negative integer, a floating point
+        number), then the web app will keep asking for a number until the valid
+        positive integer is entered
+      </li>
+      <li class="textParag">
+        If the entered text is a positive integer, then the app will print prime
+        numbers that are not greater than that given positive integer
+      </li>
+    </ul>
+    <p class="textHead">Hint:</p>
+
+    <ol>
+      <li class="textParag">You may want to use loop with label.</li>
+      <li class="textParag">You may want to use array with push function</li>
+    </ol>
+  </body>
+</html>

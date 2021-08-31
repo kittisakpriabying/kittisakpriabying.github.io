@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    var array = new Array();
+    outer: for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        let num = prompt(
+          "Enter a positive integer (a negative integer to quit):"
+        );
+        if (num < 0) break outer;
+        if (num > 0) {
+          num.split("");
+          array.push(num);
+        }
+      }
+    }
+
+    const num1 = array.map((i) => Number(i));
+    var total = 0;
+    for (let i = 0; i < array.length; i++) total += num1[i];
+
+    var avg = total / array.length;
+    var a = avg.toFixed(2);
+    alert(
+      "For the list " +
+        array +
+        ", the average is " +
+        a +
+        ", the minimum is " +
+        Math.min.apply(Math, num1) +
+        ", and the maximum is " +
+        Math.max.apply(Math, num1)
+    );
+  </script>
+  <head></head>
+  <body>
+    <h1>Statistics Calculator</h1>
+    <p class="textHead">
+      Write the web app to prompt accepting for positive integers until the user
+      enters a negative integer
+    </p>
+    <ul>
+      <li class="textParag">
+        If the entered text is not a positive integer number, then the web app
+        will keep asking for a number until the valid positive integer is
+        entered
+      </li>
+      <li class="textParag">
+        If the entered text is a negative integer, then the web app will show
+        the statistics (average, min, max) of all entered positive integers
+      </li>
+      <li class="textParag">
+        If the user enters a negative integer as the first integer, the average,
+        the min, and the max is 0
+      </li>
+    </ul>
+    <p class = "textHead">Note:</p>
+    <ol>
+      <li class="textParag">
+        You need to implement functions to check whether an entered text ia
+        positive integer or not and whether an entered text is a negative
+        integer or not.
+      </li>
+      <li class="textParag">
+        You need to implement functions to computer average, main, and max of a
+        list of integers.
+      </li>
+    </ol>
+  </body>
+</html>
