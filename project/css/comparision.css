@@ -1,0 +1,32 @@
+.textCom{
+    font-size: 32px;
+    font-weight: 480;
+}
+.align{
+    text-align: center;
+    font-size: 32px;
+    color: #146875;
+    font-weight: 600;
+}
+
+.textVS{
+    text-align: center;
+    font-size: 32px;
+    color: #146875;
+    font-weight: 600;
+}
+
+@media all and (max-width:30em) {
+    .textCom{
+        font-size: 16px;
+    }
+}
+
+
+/* ---------------------------------------------------------*/
+
+@media screen and (max-width: 870px) {
+    .textNewCase {
+        font-size: 52px;
+    }
+}
