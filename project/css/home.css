@@ -10,3 +10,15 @@
 .sizeIcon{
     font-size: 500%;
 }
+.sizeGraph{
+    width:100%;
+    max-width:600px;
+}
+
+.sizeGraphLine{
+    
+    width:100%;
+    max-width:600px;
+    
+}
+
