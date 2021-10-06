@@ -29,6 +29,7 @@
   <script src="js/chart-area-demo.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
 
@@ -40,7 +41,7 @@
   <div class="navbars">
     <a class="active" href="home.html"><i class="fa fa-home w3-xlarge"></i> Home</a>
     <a href="comparision.html"><i class="fas fa-greater-than-equal w3-xlarge"></i> Comparision</a>
-    <a href="world.html"><i class="fas fa-globe-americas w3-xlarge"></i> World</a>
+    <a href="world.html"><i class="fas fa-globe-americas w3-xlarge"></i> WorldWide</a>
     <a href="vaccine.html"> <i class="fas fa-syringe w3-xlarge"></i> Vaccination</a>
     <a href="prenven.html"> <i class="far fa-newspaper w3-xlarge"></i> Preventation</a>
   </div>
@@ -52,17 +53,23 @@
   <div id="content">
     <div class="container-fluid">
       <div class="w3-container w3-padding-32 w3-center w3-paleturquoise">
-        <h1 class="textHeaderCovidTH"><span class="w3-hide-small">COVID-19 Thailand Situation</span></h1>
+        <h1 class="textHeaderCovidTH">COVID-19 Thailand Situation</h1>
 
         <div>
-          <p style="font-size: 25px">Saturday, 2 October 2021</p>
+          <p class="textDay">Saturday, 2 October 2021</p>
         </div>
-        <button type="button" class="btn btn-info">Today</button>
-        <button type="button" class="btn btn-secondary">Yesterday</button>
-        <button type="button" class="btn btn-success">Weekly</button>
-        <button type="button" class="btn btn-danger">Month</button>
-        <button type="button" class="btn btn-warning">Year</button>
-        <h1>Province: Khonkaen </h1>
+        <div>
+          <button type="btToday" class="btn btn-info textButton">Today</button>
+          <button type="btYesterday" class="btn btn-secondary textButton">Yesterday</button>
+          <button type="btWeekly" class="btn btn-success textButton">Weekly</button>
+          <button type="btMonth" class="btn btn-danger textButton">Month</button>
+          <button type="btYear" class="btn btn-warning textButton">Year</button>
+          <input type="date">
+
+        </div>
+
+
+        <h1 class="textDay">Province: Khonkaen </h1>
         <!--Search -->
         <form class=" d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
           <div class="input-group">
@@ -75,7 +82,6 @@
             </div>
           </div>
         </form>
-
       </div>
       <div class="container-fluid">
         <!-- Content Row -->
@@ -87,9 +93,9 @@
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCase">
+                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard">
                       New Cases</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontInt">+12,000</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum">+12,000</div>
                   </div>
                   <div class="col-auto">
                     <i class="fas fa-user-plus sizeIcon text-info"></i>
@@ -105,9 +111,9 @@
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1 fontCase">
+                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1 fontCard">
                       New Deaths</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontInt">+100</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum">+100</div>
                   </div>
                   <div class="col-auto">
                     <i class="fas fa-skull-crossbones sizeIcon text-danger"></i>
@@ -123,9 +129,9 @@
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fontCase">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fontCard">
                       New Recovered</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontInt">+10,000</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum">+10,000</div>
                   </div>
                   <div class="col-auto">
                     <i class="bi bi-shield-fill-plus sizeIcon text-success"></i>
@@ -140,9 +146,9 @@
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCase">
+                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard">
                       Total Cases</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontInt">1,200,000</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum">1,200,000</div>
                   </div>
                   <div class="col-auto">
 
@@ -158,9 +164,9 @@
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1 fontCase">
+                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1 fontCard">
                       Total Deaths</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontInt">10,050</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum">10,050</div>
                   </div>
                   <div class="col-auto">
                     <i class="fas fa-skull-crossbones  text-gray-300 sizeIcon"></i>
@@ -175,9 +181,9 @@
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fontCase">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fontCard">
                       Total Recovered</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontInt">700,000</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum">700,000</div>
                   </div>
                   <div class="col-auto">
                     <i class="bi bi-shield-fill-plus text-gray-300 sizeIcon"></i>
@@ -188,128 +194,42 @@
           </div>
         </div>
         <!-- Content Row******************************************************************************************************** -->
-        <div class="row">
+        <div class="row ">
           <!-- Area Chart -->
-          <div class="col-xl-8 col-lg-7">
-            <div class="card shadow mb-4">
-              <!-- Card Header - Dropdown -->
-              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Coronavirus Thailand Graphs</h6>
-              </div>
-              <!-- Card Body -->
-              <div class="card-body">
-                <div class="">
-                  <canvas id="myChart"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div id="curve_chart" class="graphSize"></div>
 
-          <!-- Pie Chart -->
-          <div class="col-xl-4 col-lg-5">
-            <div class="card shadow mb-4">
-              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Percentage</h6>
-              </div>
-              <!-- Card Body -->
-              <div class="card-body">
-                <div class="">
-                  <canvas id="myChart1"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
+      <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
 
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Year', 'Sales', 'Expenses'],
+            ['2004', 1000, 400],
+            ['2005', 1170, 460],
+            ['2006', 660, 1120],
+            ['2007', 1030, 540]
+          ]);
 
+          var options = {
+            title: 'Company Performance',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+          };
 
+          var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
-
-
-
-
-
-
-
-      <script>
-        //setup 
-        const data = {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-          datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-          }]
-
-        };
-
-        // config
-        const config = {
-          type: 'line',
-          data: data,
-          options: {
-            responsive: true,
-            plugins: {
-              legend: {
-                position: 'top',
-              },
-              title: {
-                display: true,
-                text: 'Chart.js Line Chart'
-              }
-            }
-          },
-        };
-
-        const myChart = new Chart(
-          document.getElementById("myChart"),
-          config
-        );
+          chart.draw(data, options);
+        }
       </script>
 
-      <script>
-        var xValues = ["Total Cases", "Total Deaths", "Population"];
-        var yValues = [55, 49, 44, ];
-        var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          
-        ];
+      <!-- w3-hide-large w3-hide-medium ******************************************************************************************************** -->
+      <div class="w3-hide-large w3-hide-medium">
 
-        new Chart("myChart1", {
-          type: "pie",
-          data: {
-            labels: xValues,
-            datasets: [{
-              backgroundColor: barColors,
-              data: yValues
-            }]
-          },
-          options: {
-            title: {
-              display: true,
-            }
-          }
-        });
-      </script>
+
+      </div>
 
 </body>
 

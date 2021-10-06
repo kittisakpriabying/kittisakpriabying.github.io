@@ -1,0 +1,66 @@
+
+.fontCardV{
+    font-size: 150%;
+}
+
+.fontNumV{
+    font-size: 300%;
+    text-align: center;
+}
+
+.sizeIconV{
+    font-size: 500%;
+}
+.sizeGraphV{
+    width:100%;
+    max-width:600px;
+}
+
+.sizeGraphLineV{
+    
+    width:100%;
+    max-width:600px;
+    
+}
+
+.textHeaderCovidTH{
+    font-size: 50px;
+    color: #1a7b8a;
+    font-weight: 500;
+}.fontRef{
+    font-size: 16px;
+}.textDayV{
+    font-size: 32px;
+}.textButtonV{
+    font-size: 18px;
+}
+
+@media screen and (max-width: 670px){
+    .textHeaderCovidTH{
+        font-size: 24px;
+        
+}.textDayV{
+    font-size: 18px;
+}.textButtonV{
+    font-size: 10px;
+}.sizeIconV{
+    font-size: 250%;
+}.fontCardV{
+    font-size: 80%;
+}.fontNumV{
+    font-size: 130%;
+}
+
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+    .textDayV{
+        font-size: 32px;
+    }
+    .fontCardV{
+        font-size: 100%;
+    }.fontNumV{
+        font-size: 180%;
+    }.sizeIconV{
+        font-size: 300%;
+    }
+}

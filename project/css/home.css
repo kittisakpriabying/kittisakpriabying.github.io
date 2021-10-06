@@ -1,24 +1,121 @@
-.fontCase{
-    font-size: 150%;
+.fontCard {
+  font-size: 150%;
 }
 
-.fontInt{
+.fontNum {
+  font-size: 300%;
+  text-align: center;
+}
+
+.sizeIcon {
+  font-size: 500%;
+}
+.sizeGraph {
+  width: 100%;
+  max-width: 600px;
+}
+
+.sizeGraphLine {
+  width: 100%;
+  max-width: 600px;
+}
+
+.textHeaderCovidTH {
+  font-size: 50px;
+  color: #1a7b8a;
+  font-weight: 500;
+}
+.fontRef {
+  font-size: 16px;
+}
+.textDay {
+  font-size: 32px;
+}
+.textButton {
+  font-size: 18px;
+}
+.dateRes {
+  font-size: 18px;
+}
+.graphSize {
+  width: 900px;
+  height: 500px;
+}
+
+@media screen and (max-width: 670px) {
+  .textHeaderCovidTH {
+    font-size: 24px;
+  }
+  .textDay {
+    font-size: 18px;
+  }
+  .textButton {
+    font-size: 10px;
+  }
+  .sizeIcon {
+    font-size: 250%;
+  }
+  .fontCard {
+    font-size: 100%;
+  }
+  .fontNum {
+    font-size: 130%;
+  }
+  .graphSize {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .textDay {
+    font-size: 32px;
+  }
+  .fontCard {
+    font-size: 100%;
+  }
+  .fontNum {
+    font-size: 180%;
+  }
+  .sizeIcon {
     font-size: 300%;
-    text-align: center;
+  }
 }
 
-.sizeIcon{
-    font-size: 500%;
-}
-.sizeGraph{
-    width:100%;
-    max-width:600px;
+/***************************************************************************************/
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button {
+  display: none;
 }
 
-.sizeGraphLine{
-    
-    width:100%;
-    max-width:600px;
-    
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
 }
 
+/* Always display the drop down caret */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #2c3e50;
+}
+
+/* A few custom styles for date inputs */
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  color: #858796;
+  font-family: "Helvetica", arial, sans-serif;
+  font-size: 18px;
+  border: 1px solid #858796;
+  background: #858796;
+  padding: 5px;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+input[type="date"],
+focus {
+  color: #ffffff;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}

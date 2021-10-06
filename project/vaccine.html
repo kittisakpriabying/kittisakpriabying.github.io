@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/vaccine.css" rel="stylesheet">
   <link href="css/home.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -48,16 +49,16 @@
   <div id="content">
     <div class="container-fluid">
       <div class="w3-container w3-padding-32 w3-center w3-paleturquoise">
-        <h1 class="textHeaderCovidTH"><span class="w3-hide-small">Covid-19 Vaccinations in Thailand</span></h1>
+        <h1 class="textHeaderCovidTH">Covid-19 Vaccinations in Thailand</h1>
 
         <div>
-          <p style="font-size: 25px">Saturday, 2 October 2021</p>
+          <p class="textDayV">Saturday, 2 October 2021</p>
         </div>
-        <button type="button" class="btn btn-info">Today</button>
-        <button type="button" class="btn btn-secondary">Yesterday</button>
-        <button type="button" class="btn btn-success">Weekly</button>
-        <button type="button" class="btn btn-danger">Month</button>
-        <button type="button" class="btn btn-warning">Year</button>
+        <button type="todayBt" class="btn btn-info textButtonV">Today</button>
+        <button type="YesterdayBt" class="btn btn-secondary textButtonV">Yesterday</button>
+        <button type="WeeklyBt" class="btn btn-success textButtonV">Weekly</button>
+        <button type="MonthBt" class="btn btn-danger textButtonV">Month</button>
+        <button type="YearBt" class="btn btn-warning textButtonV">Year</button>
         
 
       </div>
@@ -73,15 +74,15 @@
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCase">
+                  <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCardV">
                     Number of vaccine doses administered</div>
-                    <div class=" text-xs font-weight-bold text-danger text-uppercase mb-1 fontCase">
+                    <div class=" text-xs font-weight-bold text-danger text-uppercase mb-1 fontCardV">
                       Today</div>
 
-                  <div class="h5 mb-0 font-weight-bold text-gray-800 fontInt">+12,000</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800 fontNumV">+12,000</div>
                 </div>
                 <div class="col-auto">
-                  <i class="fas fa-user-plus sizeIcon text-info"></i>
+                  <i class="fas fa-user-plus sizeIconV text-info"></i>
                 </div>
               </div>
             </div>
@@ -94,14 +95,14 @@
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fontCase">
+                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fontCardV">
                     Number of people given the 1st Dose</div>
-                    <div class=" text-xs font-weight-bold text-success text-uppercase mb-1 fontCase">
+                    <div class=" text-xs font-weight-bold text-success text-uppercase mb-1 fontCardV">
                       </div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800 fontInt">+100</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800 fontNumV">+100</div>
                 </div>
                 <div class="col-auto">
-                  <i class="fas fa-skull-crossbones sizeIcon text-success"></i>
+                  <i class="fas fa-skull-crossbones sizeIconV text-success"></i>
                 </div>
               </div>
             </div>
@@ -115,13 +116,13 @@
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCase">
+                  <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCardV">
                     Total Doses given</div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800 fontInt">1,200,000</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800 fontNumV">1,200,000</div>
                 </div>
                 <div class="col-auto">
 
-                  <i class="fas fa-user-plus  text-gray-300 sizeIcon"></i>
+                  <i class="fas fa-user-plus  text-gray-300 sizeIconV"></i>
                 </div>
               </div>
             </div>
@@ -133,12 +134,12 @@
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fontCase">
+                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fontCardV">
                     Number of people given the 2nd Dose</div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800 fontInt">10,050</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800 fontNumV">10,050</div>
                 </div>
                 <div class="col-auto">
-                  <i class="fas fa-skull-crossbones  text-gray-300 sizeIcon"></i>
+                  <i class="fas fa-skull-crossbones  text-gray-300 sizeIconV"></i>
                 </div>
               </div>
             </div>
