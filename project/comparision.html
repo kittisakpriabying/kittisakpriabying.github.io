@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<title>CLUB19</title>
 
 <head>
     <meta charset="utf-8">
@@ -7,25 +8,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>comparision</title>
+
+    <title>CLUB-19</title>
+
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="css/comparision.css" rel="stylesheet">
-    <link href="css/cardDashbord.css" rel="stylesheet">
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/comparision.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/b9144d37ca.js" crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"
         integrity="sha256-bC3LCZCwKeehY6T4fFi9VfOU0gztUa+S4cnkIhVPZ5E=" crossorigin="anonymous"></script>
-    <script src="js/myCovidChart.js"></script>
+    <script src="js/chart-area-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="js/thaiAPI.js" type="text/javascript"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+
+
+
 
 </head>
 
@@ -33,68 +60,262 @@
     <!--Nav Bar -->
     <div class="navbars">
         <a href="home.html"><i class="fa fa-home w3-xlarge"></i> Home</a>
-        <a class="active" href="comparision.html"><i class="fas fa-greater-than-equal w3-xlarge"></i> Comparision</a>
-        <a href="world.html"><i class="fas fa-globe-americas w3-xlarge"></i> World</a>
+        <a class="active" href="comparision.html"><i class="fas fa-greater-than-equal w3-xlarge"></i> Comparison</a>
+        <a href="world.html"><i class="fas fa-globe-americas w3-xlarge"></i> WorldWide</a>
         <a href="vaccine.html"> <i class="fas fa-syringe w3-xlarge"></i> Vaccination</a>
         <a href="prenven.html"> <i class="far fa-newspaper w3-xlarge"></i> Preventation</a>
     </div>
 
-    <div class="w3-container w3-padding-32 w3-center w3-paleturquoise">
-        <h1 class="textHeaderCovidTH"><span >Comparision COVID-19 in Thailand</span></h1>
-    </div>
 
-    <!-- Search for Province -->
-    <div class="container">
-        <div class="row row-cols-auto">
-            <div class="col-1">
-                <h1 class="textCom">Province:</h1>
-            </div>
-            <div class="col">
-                <form
-                    class="d-none d-sm-inline-block form-inline mr-auto mr-auto ml-md-5 my-2 my-md-3 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                            aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
 
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col textVS">VS</div>
-            <div class="col-1">
-                <h1 class="textCom">Province:</h1>
-            </div>
-            <div class="col">
-                <form
-                    class=" d-none d-sm-inline-block form-inline mr-auto mr-auto ml-md-5 my-2 my-md-3 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                            aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
-                            
 
-                        </div>
-                        
-                    </div>
-                </form>
-                
+    <div id="content-wrapper" class="d-flex flex-column"></div>
+    <div id="content">
+        <div class="container-fluid">
+            <div class="w3-container w3-padding-32 w3-center w3-paleturquoise">
+                <h1 class="textHeaderCovidTH">Comparison COVID-19 in Thailand </h1>
             </div>
         </div>
     </div>
 
-    
-    
+
+
+    <div class="row w3-center">
+        <div class=" col-md-6 mb-4">
+
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard ">
+                        Province
+                        :
+                        <form class=" d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small"
+                                    placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard "> date
+                        :
+                        <form class=" d-sm-inline-block form-inline mr-auto ml-md-5 my-2 my-md-3 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="dd/mm/yy"
+                                    aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class=" col-md-6 mb-4">
+
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard ">
+                        Province
+                        :
+                        <form class=" d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small"
+                                    placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard "> date
+                        :
+                        <form class=" d-sm-inline-block form-inline mr-auto ml-md-5 my-2 my-md-3 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="dd/mm/yy"
+                                    aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
 
+
+
+
+    <div class="container-fluid">
+        <!-- Content Row -->
+        <div class="row">
+
+            <!-- New cases dashbord -->
+            <div class="col-xl-6 col-md-6 mb-4">
+                <div class="card border-bottom-info shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard w3-center">
+                                    Information 1</div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="fontT">Province: <span class="fontN">Khonkaen<span></p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="fontT">Date: <span class="fontN">8 October 2021<span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="fontT">New cases: <span class="fontN">1500<span></p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="fontT">Total cases: <span class="fontN">15060<span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="fontT">New deaths: <span class="fontN">15555<span></p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="fontT">Total deaths: <span class="fontN">15006<span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="fontT">New recovered: <span class="fontN">15000<span></p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="fontT">Total recovered: <span class="fontN">15000<span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- New cases dashbord -->
+            <div class="col-xl-6 col-md-6 mb-4">
+                <div class="card border-bottom-info shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard w3-center">
+                                    Information 2</div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="fontT">Province: <span class="fontN">BangKok<span></p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="fontT">Date: <span class="fontN">7 October 2021<span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="fontT">New cases: <span class="fontN">15000<span></p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="fontT">Total cases: <span class="fontN">15000<span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="fontT">New deaths: <span class="fontN">15000<span></p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="fontT">Total deaths: <span class="fontN">15000<span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="fontT">New recovered: <span class="fontN">15000<span></p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="fontT">Total recovered: <span class="fontN">15000<span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row justify-content-center">
+        <!-- Portfolio Item 1-->
+        <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                <div class="w3-center"><button type="btWeekly" class="btn btn-success textButton">Comparison</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
+                        aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Result</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <p>Compare between BangKok on 7 October 2021 and Khonkaen on 6 October 2021 </p>
+                                <div>New cases: BangKok more than Khonkaen 6,000 cases accounted for 5.63%</div>
+                                <div>New deaths: BangKok more than Khonkaen 6,000 cases cases accounted for 5.63%</div>
+                                <div>New recovered: BangKok more than Khonkaen 6,000 cases cases accounted for 5.63%</div>
+                                <div>Total cases: BangKok more than Khonkaen 6,000 cases cases accounted for 5.63%</div>
+                                <div>Total deaths: BangKok more than Khonkaen 6,000 cases cases accounted for 5.63%</div>
+                                <div>Total recovered: BangKok more than Khonkaen 6,000 cases cases accounted for 5.63%</div>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
+
 
 </html>

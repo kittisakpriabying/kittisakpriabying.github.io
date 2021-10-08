@@ -1,25 +1,10 @@
-.textCom{
-    font-size: 32px;
-    font-weight: 480;
-}
-.align{
-    text-align: center;
-    font-size: 32px;
-    color: #146875;
-    font-weight: 600;
-}
 
-.textVS{
-    text-align: center;
-    font-size: 32px;
-    color: #146875;
-    font-weight: 600;
-}
 
 @media all and (max-width:30em) {
     .textCom{
         font-size: 16px;
     }
+    
 }
 
 
@@ -30,3 +15,30 @@
         font-size: 52px;
     }
 }
+
+.textVs{
+    font-size: 50px;
+}
+
+.fontT{
+    font-size: 24px;
+    font-weight: 500;
+}
+.fontN{
+    font-size: 24px;
+    font-weight: 700;
+}
+@media screen and (max-width: 670px) {
+    .fontT{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .fontN{
+        font-size: 16px;
+        font-weight: 700;
+    }
+  }
+  
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    
+  }
