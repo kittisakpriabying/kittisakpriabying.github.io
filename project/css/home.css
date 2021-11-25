@@ -24,12 +24,14 @@
   font-size: 50px;
   color: #1a7b8a;
   font-weight: 500;
+ 
 }
 .fontRef {
   font-size: 16px;
 }
 .textDay {
-  font-size: 32px;
+  font-size: 24px;
+  
 }
 .textButton {
   font-size: 18px;
@@ -40,7 +42,17 @@
 .graphSize {
   width: 900px;
   height: 500px;
-}
+}.wrapper {
+  height: 500px !important;
+  }
+
+  .fontkk{
+    font-size: 18px;
+   
+  }.fontkkk{
+    font-size: 300%;
+    text-align: left;
+  }
 
 @media screen and (max-width: 670px) {
   .textHeaderCovidTH {
@@ -64,7 +76,19 @@
   .graphSize {
     width: 250px;
     height: 250px;
-  }
+  }.myChart{
+    width: 200px;
+    height: 800px;
+  }.fontkk{
+    font-size: 10px;
+   
+  }.fontkkk{
+    font-size: 150%;
+    text-align: center;
+  }.ffg{
+    width: 300px;
+    height: 500px;
+}
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -79,7 +103,10 @@
   }
   .sizeIcon {
     font-size: 300%;
-  }
+  }.ffg{
+    width: 700px;
+    height: 500px;
+}
 }
 
 /***************************************************************************************/
@@ -114,8 +141,13 @@ input[type="date"] {
 
 input[type="date"],
 focus {
-  color: #ffffff;
+  color: gray;
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
 }
+
+.bg-darks{
+  background-color: #212529;
+}
+

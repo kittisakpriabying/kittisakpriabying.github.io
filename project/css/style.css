@@ -220,3 +220,25 @@ form.example input[type=text] {
         padding-bottom: 15px;
     }
 }
+
+@media screen and (max-width: 550px){
+    a{
+        font-size: 22px;
+        font-weight: bold;
+    }
+    a b {
+        font-size: 60%; 
+        font-weight: normal;
+    }
+}
+
+@media screen and (max-width: 400px){
+    a{
+        font-size: 15px;
+        font-weight: bold;
+    }
+    a b {
+        font-size: 60%; 
+        font-weight: normal;
+    }
+}

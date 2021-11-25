@@ -1,53 +1,300 @@
-const thai = new XMLHttpRequest();
-thai.open('GET', 'https://corona.lmao.ninja/v2/countries/thailand');
-thai.send();
-var daily_case, daily_death, daily_recover, total_case, otal_death, total_recover = '';
-thai.onload = () => {
-  console.log(thai);
-  if (thai.status == 200) {
-    var data = JSON.parse(thai.response);
-    daily_case = String(data.todayCases);
-    document.getElementById('dailyCase').innerHTML = '<br> + ' + (daily_case);
-    daily_recover = String(data.todayRecovered);
-    document.getElementById('dailyRecover').innerHTML = '<br> + ' + (daily_recover);
-    daily_death = String(data.todayDeaths);
-    document.getElementById('dailyDeath').innerHTML = '<br> + ' + (daily_death);
-    total_case = String(data.cases);
-    document.getElementById('totalCase').innerHTML = '<br> ' + (total_case);
-    total_death = String(data.deaths);
-    document.getElementById('totalDeath').innerHTML = '<br> ' + (total_death);
-    total_recover = String(data.recovered);
-    document.getElementById('totalRecover').innerHTML = '<br>  ' + (total_recover);
+fetch("https://api-lab-covid.mindbase.co.th/v2/stats/daily?key=558ac716-5fe7-4b58-80e0-2021093d7492874e72").then(response => {
+    return response.json();
+  }).then(res => {
+    
+    totalDose = res.data.cumulative_vaccines.toLocaleString('en-US');
+    document.getElementById('totalDos1').innerHTML =  totalDose;
+    
+
+
+  }).catch(err => {
+
+  })
+
+fetch("https://covid19.ddc.moph.go.th/api/Cases/timeline-cases-all").then(response => {
+  return response.json();
+}).then(res => {
+
+  for (var i = 0; i <= res.length; i++) {
+    newCases = res[i].new_case.toLocaleString('en-US');
+    document.getElementById('newCases').innerHTML = "+ " + newCases;
+    newDeaths = res[i].new_death.toLocaleString('en-US');
+    document.getElementById('newDeaths').innerHTML = "+ " + newDeaths;
+    newRecovered = res[i].new_recovered.toLocaleString('en-US');
+    document.getElementById('newRecovered').innerHTML = "+ " + newRecovered;
+    totalCases = res[i].total_case.toLocaleString('en-US');
+    document.getElementById('totalCases').innerHTML = totalCases;
+    document.getElementById('totalCases2').innerHTML = totalCases;
+    totalDeaths = res[i].total_death.toLocaleString('en-US');
+    document.getElementById('totalDeaths').innerHTML = totalDeaths;
+    document.getElementById('totalDeath2').innerHTML = totalDeaths;
+    totalRecovered = res[i].total_recovered.toLocaleString('en-US');
+    document.getElementById('totalRecovered').innerHTML = totalRecovered;
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        var today = new Date(res[i].txn_date);
+        document.getElementById('dateText').innerHTML = "Data as at "+ today.toLocaleDateString("en-US", options);
+        document.getElementById('dateText2').innerHTML =  today.toLocaleDateString("en-US", options);
+        document.getElementById('dateText3').innerHTML =  today.toLocaleDateString("en-US", options);
   }
-}
+
+}).catch(err => { })
 
 function today_function() {
-  document.getElementById('dailyCase').innerHTML = '<br> + ' + (daily_case);
-  document.getElementById('dailyRecover').innerHTML = '<br> + ' + (daily_recover);
-  document.getElementById('dailyDeath').innerHTML = '<br> + ' + (daily_death);
-  document.getElementById('totalCase').innerHTML = '<br> ' + (total_case);
-  document.getElementById('totalDeath').innerHTML = '<br>  ' + (total_death);
-  document.getElementById('totalRecover').innerHTML = '<br>  ' + (total_recover);
-};
+
+  fetch("https://covid19.ddc.moph.go.th/api/Cases/timeline-cases-all").then(response => {
+    return response.json();
+  }).then(res => {
+
+    for (var i = 0; i <= res.length; i++) {
+      newCases = res[i].new_case.toLocaleString('en-US');
+      document.getElementById('newCases').innerHTML = "+ " + newCases;
+      newDeaths = res[i].new_death.toLocaleString('en-US');
+      document.getElementById('newDeaths').innerHTML = "+ " + newDeaths;
+      newRecovered = res[i].new_recovered.toLocaleString('en-US');
+      document.getElementById('newRecovered').innerHTML = "+ " + newRecovered;
+      totalCases = res[i].total_case.toLocaleString('en-US');
+      document.getElementById('totalCases').innerHTML = totalCases;
+      totalDeaths = res[i].total_death.toLocaleString('en-US');
+      document.getElementById('totalDeaths').innerHTML = totalDeaths;
+      totalRecovered = res[i].total_recovered.toLocaleString('en-US');
+      document.getElementById('totalRecovered').innerHTML = totalRecovered;
+      var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        var today = new Date(res[i].txn_date);
+        document.getElementById('dateText').innerHTML = "Data as at "+ today.toLocaleDateString("en-US", options);
+    }
+
+  }).catch(err => { })
+}
 
 function yester_function() {
-  document.getElementById('dailyCase').innerHTML = '<br> + ' + (daily_death);
-  document.getElementById('dailyRecover').innerHTML = '<br> + ' + (daily_death);
-  document.getElementById('dailyDeath').innerHTML = '<br> + ' + (daily_case);
-  document.getElementById('totalCase').innerHTML = '<br> ' + (total_recover);
-  document.getElementById('totalDeath').innerHTML = '<br> ' + (total_death);
-  document.getElementById('totalRecover').innerHTML = '<br> ' + (total_case);
-};
+
+  fetch("https://covid19.ddc.moph.go.th/api/Cases/timeline-cases-all").then(response => {
+    return response.json();
+  }).then(res => {
+    var num = res.length - 2;
+    newCases = res[num].new_case.toLocaleString('en-US');
+    document.getElementById('newCases').innerHTML = "+ " + newCases;
+    newDeaths = res[num].new_death.toLocaleString('en-US');
+    document.getElementById('newDeaths').innerHTML = "+ " + newDeaths;
+    newRecovered = res[num].new_recovered.toLocaleString('en-US');
+    document.getElementById('newRecovered').innerHTML = "+ " + newRecovered;
+    totalCases = res[num].total_case.toLocaleString('en-US');
+    document.getElementById('totalCases').innerHTML = totalCases;
+    totalDeaths = res[num].total_death.toLocaleString('en-US');
+    document.getElementById('totalDeaths').innerHTML = totalDeaths;
+    totalRecovered = res[num].total_recovered.toLocaleString('en-US');
+    document.getElementById('totalRecovered').innerHTML = totalRecovered;
+
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        var today = new Date(res[num].txn_date);
+        document.getElementById('dateText').innerHTML = "Data as at "+ today.toLocaleDateString("en-US", options);
+
+  }).catch(err => {
+
+  })
+}
+
+function weekly_function() {
+
+  fetch("https://covid19.ddc.moph.go.th/api/Cases/timeline-cases-all").then(response => {
+    return response.json();
+  }).then(res => {
+    var num = res.length - 8;
+    newCases = res[num].new_case.toLocaleString('en-US');
+    document.getElementById('newCases').innerHTML = "+ " + newCases;
+    newDeaths = res[num].new_death.toLocaleString('en-US');
+    document.getElementById('newDeaths').innerHTML = "+ " + newDeaths;
+    newRecovered = res[num].new_recovered.toLocaleString('en-US');
+    document.getElementById('newRecovered').innerHTML = "+ " + newRecovered;
+    totalCases = res[num].total_case.toLocaleString('en-US');
+    document.getElementById('totalCases').innerHTML = totalCases;
+    totalDeaths = res[num].total_death.toLocaleString('en-US');
+    document.getElementById('totalDeaths').innerHTML = totalDeaths;
+    totalRecovered = res[num].total_recovered.toLocaleString('en-US');
+    document.getElementById('totalRecovered').innerHTML = totalRecovered;
+
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        var today = new Date(res[num].txn_date);
+        document.getElementById('dateText').innerHTML = "Data as at "+ today.toLocaleDateString("en-US", options);
+
+  }).catch(err => {
+
+  })
+}
+
+function month_function() {
+
+  fetch("https://covid19.ddc.moph.go.th/api/Cases/timeline-cases-all").then(response => {
+    return response.json();
+  }).then(res => {
+    var num = res.length - 31;
+    newCases = res[num].new_case.toLocaleString('en-US');
+    document.getElementById('newCases').innerHTML = "+ " + newCases;
+    newDeaths = res[num].new_death.toLocaleString('en-US');
+    document.getElementById('newDeaths').innerHTML = "+ " + newDeaths;
+    newRecovered = res[num].new_recovered.toLocaleString('en-US');
+    document.getElementById('newRecovered').innerHTML = "+ " + newRecovered;
+    totalCases = res[num].total_case.toLocaleString('en-US');
+    document.getElementById('totalCases').innerHTML = totalCases;
+    totalDeaths = res[num].total_death.toLocaleString('en-US');
+    document.getElementById('totalDeaths').innerHTML = totalDeaths;
+    totalRecovered = res[num].total_recovered.toLocaleString('en-US');
+    document.getElementById('totalRecovered').innerHTML = totalRecovered;
+
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        var today = new Date(res[num].txn_date);
+        document.getElementById('dateText').innerHTML = "Data as at "+ today.toLocaleDateString("en-US", options);
+
+  }).catch(err => {
+
+  })
+
+}
 
 
-var months = new Array();
-            months[1] = "January"; months[2] = "February"; months[3] = "March";
-            months[4] = "April"; months[5] = "May"; months[6] = "June";
-            months[7] = "July"; months[8] = "August"; months[9] = "September";
-            months[10] = "October"; months[11] = "November"; months[12] = "December";
-            var todaysdate = new Date();
-            var date = todaysdate.getDate(); var day = todaysdate.getDay() + 1;
-            var month = todaysdate.getMonth() + 1; var yy = todaysdate.getYear();
-            var year = (yy < 1000) ? yy + 1900 : yy;
-            var year2 = year - (2000 * 1); year2 = (year2 < 10) ? "0" + year2 : year2;
-            document.getElementById("datetime").innerHTML = date + " " + months[month] + ", " + year;
+
+function date_select() {
+
+  fetch("https://covid19.ddc.moph.go.th/api/Cases/timeline-cases-all").then(response => {
+    return response.json();
+  }).then(res => {
+
+    for (var i = 0; i <= res.length; i++) {
+      var my_data = res[i].txn_date;
+      var date = document.getElementById("selectDate").value;
+      if (my_data == date) {
+        newCases = res[i].new_case.toLocaleString('en-US');
+        document.getElementById('newCases').innerHTML = "+ " + newCases;
+        newDeaths = res[i].new_death.toLocaleString('en-US');
+        document.getElementById('newDeaths').innerHTML = "+ " + newDeaths;
+        newRecovered = res[i].new_recovered.toLocaleString('en-US');
+        document.getElementById('newRecovered').innerHTML = "+ " + newRecovered;
+        totalCases = res[i].total_case.toLocaleString('en-US');
+        document.getElementById('totalCases').innerHTML = totalCases;
+        totalDeaths = res[i].total_death.toLocaleString('en-US');
+        document.getElementById('totalDeaths').innerHTML = totalDeaths;
+        totalRecovered = res[i].total_recovered.toLocaleString('en-US');
+        document.getElementById('totalRecovered').innerHTML = totalRecovered;
+
+
+
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        var today = new Date(res[i].txn_date);
+        document.getElementById('dateText').innerHTML = "Data as at "+ today.toLocaleDateString("en-US", options);
+      }
+    }
+
+  }).catch(err => {
+
+  })
+
+
+  fetch("https://covid19.ddc.moph.go.th/api/Cases/round-1to2-all").then(response => {
+    return response.json();
+  }).then(res => {
+
+    for (var i = 0; i <= res.length; i++) {
+      var my_data = res[i].txn_date;
+      var date = document.getElementById("selectDate").value;
+      if (my_data == date) {
+        newCases = res[i].new_case.toLocaleString('en-US');
+        document.getElementById('newCases').innerHTML = "+ " + newCases;
+        newDeaths = res[i].new_death.toLocaleString('en-US');
+        document.getElementById('newDeaths').innerHTML = "+ " + newDeaths;
+        newRecovered = res[i].new_recovered.toLocaleString('en-US');
+        document.getElementById('newRecovered').innerHTML = "+ " + newRecovered;
+        totalCases = res[i].total_case.toLocaleString('en-US');
+        document.getElementById('totalCases').innerHTML = totalCases;
+        totalDeaths = res[i].total_death.toLocaleString('en-US');
+        document.getElementById('totalDeaths').innerHTML = totalDeaths;
+        totalRecovered = res[i].total_recovered.toLocaleString('en-US');
+        document.getElementById('totalRecovered').innerHTML = totalRecovered;
+
+
+
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        var today = new Date(res[my_data].txn_date);
+        document.getElementById('dateText').innerHTML = today.toLocaleDateString("en-US", options);
+      }
+    }
+
+  }).catch(err => {
+
+  })
+}
+
+
+
+
+//********************************************************************************* */
+
+
+
+fetch("https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces").then(response => {
+  return response.json();
+}).then(res => {
+  for (var i = 0; i <= res.length; i++) {
+    var pro = document.createElement('option')
+    var province = document.getElementById('province')
+    var c = res[i].province;
+    pro.innerHTML = c;
+    province.appendChild(pro)
+
+  }
+
+}).catch(err => {
+
+})
+
+
+function provinces_selected() {
+
+  fetch("https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces").then(response => {
+    return response.json();
+  }).then(res => {
+
+    for (var i = 0; i <= res.length; i++) {
+      var select_province = document.getElementById('selectProvinces2').value;
+      var data_province = res[i].province;
+      if (select_province == data_province) {
+        document.getElementById('province_new').textContent = "New Case Excludeabroad";
+        var text = document.getElementById('province_total');
+        text.textContent = "Total Case Excludeabroad";
+        
+        newCases = res[i].new_case.toLocaleString('en-US');
+        document.getElementById('newCases').innerHTML = "+ " + newCases;
+        newDeaths = res[i].new_death.toLocaleString('en-US');
+        document.getElementById('newDeaths').innerHTML = "+ " + newDeaths;
+        newRecovered = res[i].new_case_excludeabroad.toLocaleString('en-US');
+        document.getElementById('newRecovered').innerHTML = "+ " + newRecovered;
+        totalCases = res[i].total_case.toLocaleString('en-US');
+        document.getElementById('totalCases').innerHTML = totalCases;
+        totalDeaths = res[i].total_death.toLocaleString('en-US');
+        document.getElementById('totalDeaths').innerHTML = totalDeaths;
+        totalRecovered = res[i].total_case_excludeabroad.toLocaleString('en-US');
+        document.getElementById('totalRecovered').innerHTML = totalRecovered;
+
+
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        var today = new Date(res[i].txn_date);
+        document.getElementById('dateText').innerHTML = today.toLocaleDateString("en-US", options);
+
+      }
+
+    }
+
+    
+
+  }).catch(err => {
+
+  })
+
+
+}
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>CLUB19</title>
+<title>CLUB19-Comparison</title>
 
 <head>
     <meta charset="utf-8">
@@ -36,6 +36,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/compare.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
@@ -50,21 +52,20 @@
         type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-
-
-
-
+    <script src="js/thaiAPI.js" type="text/javascript"></script>
+    
 </head>
 
 <body style="background-color: #edf2f9">
-    <!--Nav Bar -->
-    <div class="navbars">
-        <a href="home.html"><i class="fa fa-home w3-xlarge"></i> Home</a>
-        <a class="active" href="comparision.html"><i class="fas fa-greater-than-equal w3-xlarge"></i> Comparison</a>
-        <a href="world.html"><i class="fas fa-globe-americas w3-xlarge"></i> WorldWide</a>
-        <a href="vaccine.html"> <i class="fas fa-syringe w3-xlarge"></i> Vaccination</a>
-        <a href="prenven.html"> <i class="far fa-newspaper w3-xlarge"></i> Preventation</a>
-    </div>
+  <!--Nav Bar -->
+  <div class="navbars">
+    <a href="home.html"><i class="fa fa-home w3-xlarge"></i> Home</a>
+    <a href="province.html"> <i class="far fa-newspaper w3-xlarge"></i> Province</a>
+    <a class="active" href="comparision.html"><i class="fas fa-greater-than-equal w3-xlarge"></i> Comparison</a>
+    <a href="world.html"><i class="fas fa-globe-americas w3-xlarge"></i> World</a>
+    <a href="vaccine.html"> <i class="fas fa-syringe w3-xlarge"></i> Vaccination</a>
+    
+  </div>
 
 
 
@@ -74,45 +75,51 @@
         <div class="container-fluid">
             <div class="w3-container w3-padding-32 w3-center w3-paleturquoise">
                 <h1 class="textHeaderCovidTH">Comparison COVID-19 in Thailand </h1>
-            </div>
+            <div>
         </div>
     </div>
 
-
+    
 
     <div class="row w3-center">
         <div class=" col-md-6 mb-4">
 
             <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard ">
+            
+                    <div class=" text-xs font-weight-bold text-info  mb-1 fontCard ">
                         Province
                         :
-                        <form class=" d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class=" d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                             <div class="input-group">
-                                <input type="text" class="form-control bg-light border-0 small"
-                                    placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            
+                                <input id="selectProvinces1" type="text" class="form-control bg-light border-0 small"
+                                    placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" LIST="province">
+            
+                                <datalist id="province"></datalist>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">
+                                    <button class="btn btn-primary" type="buttonSearch" onclick = compare1()>
                                         <i class="fas fa-search fa-sm"></i>
                                     </button>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard "> date
+                    <div class=" text-xs font-weight-bold text-info mb-1 fontCard "> Date
                         :
-                        <form class=" d-sm-inline-block form-inline mr-auto ml-md-5 my-2 my-md-3 mw-100 navbar-search">
+                        <div class=" d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-2 mw-100">
                             <div class="input-group">
-                                <input type="text" class="form-control bg-light border-0 small" placeholder="dd/mm/yy"
-                                    aria-label="Search" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">
-                                        <i class="fas fa-search fa-sm"></i>
-                                    </button>
-                                </div>
+                              
+                              <input id="selectDate1" type="date" class="form-control bg-light border-0 small"
+                                placeholder="Search for..."   >
+                            
+                              <div class="input-group-append">
+                                <button class="btn btn-primary" type="btDate"onclick = compare1()>
+                                  <i class="fas fa-search fa-sm"></i>
+                                </button>
+                              </div>
                             </div>
-                        </form>
+                          </div>
                     </div>
 
                 </div>
@@ -124,34 +131,40 @@
 
             <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard ">
+            
+                    <div class=" text-xs font-weight-bold text-info  mb-1 fontCard ">
                         Province
                         :
-                        <form class=" d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class=" d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                             <div class="input-group">
-                                <input type="text" class="form-control bg-light border-0 small"
-                                    placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            
+                                <input id="selectProvinces2" type="text" class="form-control bg-light border-0 small"
+                                    placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" LIST="province">
+            
+                                <datalist id="province"></datalist>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">
+                                    <button class="btn btn-primary" type="buttonSearch" onclick = compare2()>
                                         <i class="fas fa-search fa-sm"></i>
                                     </button>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard "> date
+                    <div class=" text-xs font-weight-bold text-info mb-1 fontCard "> Date
                         :
-                        <form class=" d-sm-inline-block form-inline mr-auto ml-md-5 my-2 my-md-3 mw-100 navbar-search">
+                        <div class=" d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-2 mw-100">
                             <div class="input-group">
-                                <input type="text" class="form-control bg-light border-0 small" placeholder="dd/mm/yy"
-                                    aria-label="Search" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">
-                                        <i class="fas fa-search fa-sm"></i>
-                                    </button>
-                                </div>
+                              
+                              <input id="selectDate2" type="date" class="form-control bg-light border-0 small"
+                                placeholder="Search for..."   >
+                            
+                              <div class="input-group-append">
+                                <button class="btn btn-primary" type="btDate"onclick = compare2()>
+                                  <i class="fas fa-search fa-sm"></i>
+                                </button>
+                              </div>
                             </div>
-                        </form>
+                          </div>
                     </div>
 
 
@@ -160,11 +173,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 
     <div class="container-fluid">
         <!-- Content Row -->
@@ -181,36 +189,29 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="fontT">Province: <span class="fontN">Khonkaen<span></p>
+                                            <p class="fontT">Province: <span class="fontN" id="pro1">-<span></p>
                                         </div>
                                         <div class="col">
-                                            <p class="fontT">Date: <span class="fontN">8 October 2021<span></p>
+                                            <p class="fontT">Date: <span class="fontN" id="date1">-<span></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="fontT">New cases: <span class="fontN">1500<span></p>
+                                            <p class="fontT">New Cases: <span class="fontN" id="newCase1" >-<span></p>
                                         </div>
                                         <div class="col">
-                                            <p class="fontT">Total cases: <span class="fontN">15060<span></p>
+                                            <p class="fontT">Total Cases: <span class="fontN" id="totalCase1">-<span></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="fontT">New deaths: <span class="fontN">15555<span></p>
+                                            <p class="fontT">New Deaths: <span class="fontN" id="newDeath1">-<span></p>
                                         </div>
                                         <div class="col">
-                                            <p class="fontT">Total deaths: <span class="fontN">15006<span></p>
+                                            <p class="fontT">Total Deaths: <span class="fontN" id="totalDeath1">-<span></p>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="fontT">New recovered: <span class="fontN">15000<span></p>
-                                        </div>
-                                        <div class="col">
-                                            <p class="fontT">Total recovered: <span class="fontN">15000<span></p>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -230,36 +231,29 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="fontT">Province: <span class="fontN">BangKok<span></p>
+                                            <p class="fontT">Province: <span class="fontN" id="pro2">-<span></p>
                                         </div>
                                         <div class="col">
-                                            <p class="fontT">Date: <span class="fontN">7 October 2021<span></p>
+                                            <p class="fontT">Date: <span class="fontN" id="date2">-<span></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="fontT">New cases: <span class="fontN">15000<span></p>
+                                            <p class="fontT">New Cases: <span class="fontN" id="newCase2" >-<span></p>
                                         </div>
                                         <div class="col">
-                                            <p class="fontT">Total cases: <span class="fontN">15000<span></p>
+                                            <p class="fontT">Total Cases: <span class="fontN" id="totalCase2">-<span></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="fontT">New deaths: <span class="fontN">15000<span></p>
+                                            <p class="fontT">New Deaths: <span class="fontN" id="newDeath2">-<span></p>
                                         </div>
                                         <div class="col">
-                                            <p class="fontT">Total deaths: <span class="fontN">15000<span></p>
+                                            <p class="fontT">Total Deaths: <span class="fontN" id="totalDeath2">-<span></p>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="fontT">New recovered: <span class="fontN">15000<span></p>
-                                        </div>
-                                        <div class="col">
-                                            <p class="fontT">Total recovered: <span class="fontN">15000<span></p>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -275,7 +269,7 @@
         <!-- Portfolio Item 1-->
         <div class="col-md-6 col-lg-4 mb-5">
             <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                <div class="w3-center"><button type="btWeekly" class="btn btn-success textButton">Comparison</button>
+                <div class="w3-center"><button type="btWeekly" class="btn btn-success textButton" onclick = comparison()>Comparison</button>
                 </div>
             </div>
         </div>
@@ -289,7 +283,7 @@
                 <div class="modal-body text-center pb-5">
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-lg-8">
+                            <div id="result" class="col">
                                 <!-- Portfolio Modal - Title-->
                                 <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Result</h2>
                                 <!-- Icon Divider-->
@@ -298,15 +292,14 @@
                                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                     <div class="divider-custom-line"></div>
                                 </div>
-                                <p>Compare between BangKok on 7 October 2021 and Khonkaen on 6 October 2021 </p>
-                                <div>New cases: BangKok more than Khonkaen 6,000 cases accounted for 5.63%</div>
-                                <div>New deaths: BangKok more than Khonkaen 6,000 cases cases accounted for 5.63%</div>
-                                <div>New recovered: BangKok more than Khonkaen 6,000 cases cases accounted for 5.63%</div>
-                                <div>Total cases: BangKok more than Khonkaen 6,000 cases cases accounted for 5.63%</div>
-                                <div>Total deaths: BangKok more than Khonkaen 6,000 cases cases accounted for 5.63%</div>
-                                <div>Total recovered: BangKok more than Khonkaen 6,000 cases cases accounted for 5.63%</div>
-                                
+                                <canvas width="200" height="50"></canvas>
 
+                                <!-- <p>Compare between <span id="prov1"></span> on <span id="day1"></span> and <span id="prov2"></span> on <span id="day2"></span> </p> -->
+                                <div><span id="com">Please select 2 provinces you want to compare.</span></div>
+                                <div><span id="newC"></span></div>
+                                <div><span id="newD"></span></div>
+                                <div><span id="newTC"></span></div>
+                                <div><span id="newTD"></span></div>
                             </div>
                         </div>
                     </div>

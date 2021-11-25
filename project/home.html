@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
-<title>CLUB19</title>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
   <title>CLUB-19</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/cardDashbord.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/preven.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/b9144d37ca.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"
+    integrity="sha256-bC3LCZCwKeehY6T4fFi9VfOU0gztUa+S4cnkIhVPZ5E=" crossorigin="anonymous"></script>
+  <script src="js/myCovidChart.js"></script>
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -31,60 +46,88 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="js/thaiAPI.js" type="text/javascript"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/devAPI.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-
-
-
+  
 </head>
 
 <body style="background-color: #edf2f9">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
   <!--Nav Bar -->
   <div class="navbars">
     <a class="active" href="home.html"><i class="fa fa-home w3-xlarge"></i> Home</a>
+    <a href="province.html"> <i class="far fa-newspaper w3-xlarge"></i> Province</a>
     <a href="comparision.html"><i class="fas fa-greater-than-equal w3-xlarge"></i> Comparison</a>
-    <a href="world.html"><i class="fas fa-globe-americas w3-xlarge"></i> WorldWide</a>
+    <a href="world.html"><i class="fas fa-globe-americas w3-xlarge"></i> World</a>
     <a href="vaccine.html"> <i class="fas fa-syringe w3-xlarge"></i> Vaccination</a>
-    <a href="prenven.html"> <i class="far fa-newspaper w3-xlarge"></i> Preventation</a>
+
   </div>
+  <header class="py-5 bg-darks">
+    <div class="container px-5">
+      <div class="row gx-5 align-items-center justify-content-center">
+        <div class="col-lg-8 col-xl-7 col-xxl-6">
+          <div class="my-5 text-left text-xl-start" >
+            <h1 class="display-5 fw-bolder text-white mb-2 fontkkk" >Thailand coronavirus information and stats
+            </h1><br>
+            <ul >
+              <li ><a href="#a1"  class="fontkk"style="color: #dfdfdf;">Coronavirus (COVID-19) Thailand statistics</a>
+              </li>
+              <li><a href="#a2"  class="fontkk"style="color: #dfdfdf;">Coronavirus Thailand Graphs</a></li>
+              <li><a href="#a3"  class="fontkk"style="color: #dfdfdf;">The 9 Best COVID-19 Prevention Strategies</a>
+              </li>
+            </ul>
 
+          </div>
+        </div>
+        <div class="col-xl-5  d-none d-xl-block "><img class="img-fluid rounded-3 my-5 imgSize"
+            src="images/couple.jpg" alt="prevenImage1" /></div>
+      </div>
+      <p class="lead fw-normal  mb-4 fontkk " style="color: #c7c8c8;">In Thailand, <span id="dateText2"></span>,
+        there have been <span id="totalCases2"></span> confirmed cases of COVID-19 with <span id="totalDeath2"></span>
+        deaths.
+        As of <span id="dateText3"></span>, a
+        total of <span id="totalDos1"></span> vaccine doses have been administered.
+      </p>
+    </div>
 
-
-
+  </header>
   <div id="content-wrapper" class="d-flex flex-column"></div>
   <div id="content">
     <div class="container-fluid">
       <div class="w3-container w3-padding-32 w3-center w3-paleturquoise">
-        <h1 class="textHeaderCovidTH">COVID-19 Thailand Situation</h1>
+        <h1 class="textHeaderCovidTH" style="color: #146875;" id='a1'>Coronavirus Thailand statistics</h1>
 
         <div>
-          <p class="textDay" id="datetime"></p>
+          <p class="textDay" id="dateText"></p>
         </div>
-        <div>
-          <button type="btToday" class="btn btn-info textButton" onclick="today_function(), tdDay()">Today</button>
-          <button type="btYesterday" class="btn btn-secondary textButton"
-            onclick="yester_function(), ysDay()">Yesterday</button>
-          <button type="btWeekly" class="btn btn-success textButton">Weekly</button>
-          <button type="btMonth" class="btn btn-danger textButton">Month</button>
-          <button type="btYear" class="btn btn-warning textButton">Year</button><br><br>
-          <input type="date">
-
-        </div>
+        <div class="w3-left">
+          <button type="btToday" class="btn btn-info textButton" onclick="today_function()">Today</button>&nbsp;&nbsp;
+          <button type="btYesterday" class="btn btn-info textButton"
+            onclick="yester_function()">Yesterday</button>&nbsp;&nbsp;
+          <button type="btWeekly" class="btn btn-info textButton" onclick=weekly_function()>Weekly</button>&nbsp;&nbsp;
+          <button type="btMonth" class="btn btn-info textButton " onclick=month_function()>Month</button>&nbsp;&nbsp;
 
 
-        <!-- <h1 class="textDay">Province: Khonkaen </h1>
-        
-        <form class=" d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-          <div class="input-group">
-            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-              aria-label="Search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-primary" type="button">
-                <i class="fas fa-search fa-sm"></i>
-              </button>
+
+          <div class=" d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100">
+
+            <div class="input-group">
+
+
+              <input id="selectDate" type="date" class="form-control bg-light border-0 small "
+                placeholder="Search for...">
+
+              <div class="input-group-append">
+                <button class="btn btn-info" type="btDate" onclick=date_select()>
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
             </div>
           </div>
-        </form> -->
+        </div><br>
       </div>
       <div class="container-fluid">
         <!-- Content Row -->
@@ -96,12 +139,12 @@
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard">
+                    <div class=" text-xs font-weight-bold text-info  mb-1 fontCard">
                       New Cases</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum" id="dailyCase"></div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum" id="newCases"></div>
                   </div>
                   <div class="col-auto">
-                    <i class="fas fa-user-plus sizeIcon text-info"></i>
+                    <i class="fas fa-user-plus sizeIcon text-info text-gray-300"></i>
                   </div>
                 </div>
               </div>
@@ -114,12 +157,14 @@
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1 fontCard">
+                    <div class="text-xs font-weight-bold text-danger  mb-1 fontCard">
                       New Deaths</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum" id="dailyDeath"></div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum" id="newDeaths">
+                    </div>
+
                   </div>
                   <div class="col-auto">
-                    <i class="fas fa-skull-crossbones sizeIcon text-danger"></i>
+                    <i class="fas fa-skull-crossbones sizeIcon text-danger text-gray-300"></i>
                   </div>
                 </div>
               </div>
@@ -132,12 +177,13 @@
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fontCard">
+                    <div class="text-xs font-weight-bold text-success  mb-1 fontCard" id="province_new">
                       New Recovered</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum" id="dailyRecover"></div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum" id="newRecovered">
+                    </div>
                   </div>
                   <div class="col-auto">
-                    <i class="bi bi-shield-fill-plus sizeIcon text-success"></i>
+                    <i class="bi bi-shield-fill-plus sizeIcon text-success text-gray-300"></i>
                   </div>
                 </div>
               </div>
@@ -145,13 +191,14 @@
           </div>
           <!-- Total Casea -->
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
+            <div class="card border-bottom-info shadow h-100 py-2">
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class=" text-xs font-weight-bold text-info text-uppercase mb-1 fontCard">
+                    <div class=" text-xs font-weight-bold text-info  mb-1 fontCard">
                       Total Cases</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum" id="totalCase"></div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum" id="totalCases">
+                    </div>
                   </div>
                   <div class="col-auto">
 
@@ -163,13 +210,14 @@
           </div>
           <!-- Total Deaths -->
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-danger shadow h-100 py-2">
+            <div class="card border-bottom-danger shadow h-100 py-2">
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1 fontCard">
+                    <div class="text-xs font-weight-bold text-danger  mb-1 fontCard">
                       Total Deaths</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum" id="totalDeath"></div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum" id="totalDeaths">
+                    </div>
                   </div>
                   <div class="col-auto">
                     <i class="fas fa-skull-crossbones  text-gray-300 sizeIcon"></i>
@@ -180,13 +228,14 @@
           </div>
           <!-- Total Recovered -->
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
+            <div class="card border-bottom-success shadow h-100 py-2">
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fontCard">
+                    <div class="text-xs font-weight-bold text-success  mb-1 fontCard" id="province_total">
                       Total Recovered</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum" id="totalRecover"></div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 fontNum" id="totalRecovered">
+                    </div>
                   </div>
                   <div class="col-auto">
                     <i class="bi bi-shield-fill-plus text-gray-300 sizeIcon"></i>
@@ -197,80 +246,42 @@
           </div>
         </div>
       </div>
-      <div id="curve_chart" style=" height: 500px"></div>
-      <script>
-        google.charts.load('current', { 'packages': ['corechart'] });
-        google.charts.setOnLoadCallback(drawChart);
 
-        function drawChart() {
-          var data = google.visualization.arrayToDataTable([
-            ['Year', 'cases', 'Deaths'],
-            ['2019', 1000, 400],
-            ['2020', 5564, 460],
-            ['2021', 2562, 1000]
-          ]);
+      <div class="w3-container w3-padding-32 w3-center w3-paleturquoise">
+        <h1 class="textHeaderCovidTH" style="color: #146875;" id='a2'>Coronavirus Thailand Graphs</h1>
 
-          var options = {
-            title: 'Grap Covid-19 of Thailand ',
-            curveType: 'function',
-            legend: { position: 'bottom' }
-          };
+        <div>
+      <div class="chart-container" style="position: relative; height:80vh; width:95vw ; background-color: #fdfdfd;">
+        <canvas id="myChart"></canvas>
+    </div>
+    </div>
+    <div>
 
-          var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+    </div>
+    <header class=" py-5">
+      <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center">
+          <div class="col-lg-8 col-xl-7 col-xxl-6">
+            <div class="my-5 text-left text-xl-start">
+              <h1 class="display-5 fw-bolder  mb-2 " style="color: #146875;" id="a3">The 9 Best COVID-19 Prevention
+                Strategies
+              </h1>
+              <p class="lead fw-normal  mb-4 fontkk" style="color: #474747;">Yale Medicine physicians review the best ways to
+                prevent COVID-19 infection.
+              </p>
+              <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                <a class="btn btn-info btn-lg px-4 me-sm-3" href="prenven.html">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5"
+              src="images/passengers.jpg" alt="prevenImage1" /></div>
+        </div>
+      </div>
+    </header>
 
-          chart.draw(data, options);
-        }
-      </script>
+    
 
-      <script>
-
-        var months = new Array();
-        months[1] = "January"; months[2] = "February"; months[3] = "March";
-        months[4] = "April"; months[5] = "May"; months[6] = "June";
-        months[7] = "July"; months[8] = "August"; months[9] = "September";
-        months[10] = "October"; months[11] = "November"; months[12] = "December";
-        var todaysdate = new Date();
-        var date = todaysdate.getDate();
-        var month = todaysdate.getMonth() + 1;
-        var yy = todaysdate.getYear();
-        var year = (yy < 1000) ? yy + 1900 : yy;
-        document.getElementById("datetime").innerHTML = date + " " + months[month] + ", " + year;
-        // to day
-        function tdDay() {
-          var todaysdate = new Date();
-          var date = todaysdate.getDate();
-          var month = todaysdate.getMonth() + 1;
-          var yy = todaysdate.getYear();
-          var year = (yy < 1000) ? yy + 1900 : yy;
-          document.getElementById("datetime").innerHTML = date + " " + months[month] + ", " + year;
-        }
-
-
-        // Yesterday
-        function ysDay() {
-          var todaysdate = new Date();
-          const yesterday = new Date(todaysdate)
-          var date = yesterday.getDate() - 1;
-          var month = yesterday.getMonth() + 1;
-          var yy = yesterday.getYear();
-          var year = (yy < 1000) ? yy + 1900 : yy;
-          document.getElementById("datetime").innerHTML = date + " " + months[month] + ", " + year;
-        }
-
-        //week
-        function wkDay() {
-          var todaysdate = new Date();
-          const yesterday = new Date(todaysdate)
-
-          var date = yesterday.getDate() - 1;
-          var month = yesterday.getMonth() + 1;
-          var yy = yesterday.getYear();
-          var year = (yy < 1000) ? yy + 1900 : yy;
-
-          if (date <= 0)
-            document.getElementById("datetime").innerHTML = date + " " + months[month] + ", " + year;
-        }
-      </script>
 
 </body>
 

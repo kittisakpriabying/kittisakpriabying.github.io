@@ -6,6 +6,7 @@ body {
     font-family: Arial;
     margin: 0;
     height: 1000px;
+    overflow: scroll;
 }
 
 .navbars {
@@ -225,4 +226,10 @@ form.example input[type=text] {
         font-size: 60%; 
         font-weight: normal;
     }
+}
+
+
+.ffg{
+    width: 1200px;
+    height: 500px;
 }
